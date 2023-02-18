@@ -14,6 +14,7 @@ function App() {
   //   console.log(`the current secondary emotion is ${secondary}`)
   // }, [secondary])
   const [checked, setChecked] = useReducer((checked)=>!checked,false);
+  // useReducer takes two parameters, one is function to change the state and another is the initial state 
   return (
     <div className="App">
         <input type= 'checkbox' value={checked} onChange = {setChecked
