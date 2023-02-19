@@ -1,0 +1,51 @@
+REACT REDUX
+    USEEFFECT  HOOK
+        useEffect hook is used to perform side effects in functional components. It takes two parameters, one is function to perform side effects and another is array of dependencies. If the array is empty, the function will be called only once when the component is mounted. If the array is not empty, the function will be called whenever any of the dependencies change.
+
+    USESTATE HOOK
+        useState hook is used to declare state variables in functional components. It takes one parameter, which is the initial value of the state variable. It returns an array of two elements, the first is the state variable and the second is a function to change the state variable.
+
+    USEREDUCER HOOK
+        useReducer takes two parameters, one is function to change the state and another is the initial state
+
+
+        
+import {  useReducer } from 'react';
+import './App.css';
+
+function App() {
+  // const [emotion, setEmotion]  = useState('happy');
+  // const [secondary, setSecondary] = useState('tired');
+
+  // useEffect( () =>{
+  //   console.log(`the current emotion is ${emotion}`)
+  // }, [emotion]);
+
+  // useEffect (()=>{
+  //   console.log(`the current secondary emotion is ${secondary}`)
+  // }, [secondary])
+  const [checked, setChecked] = useReducer((checked)=>!checked,false);
+  // useReducer takes two parameters, one is function to change the state and another is the initial state 
+  return (
+    <div className="App">
+        <input type= 'checkbox' value={checked} onChange = {setChecked
+        } />
+          <label>{checked ? "Checked" : "UnChecked"}</label>
+        
+
+
+      
+        {/* <h1>Current emotion is {emotion}</h1>
+      <button onClick={()=>{setEmotion('sad')}}>
+        sad
+      </button>
+
+      <button onClick={()=>{setEmotion('excited')}}>excited</button>
+      <h2>current secondary emotion is {secondary}</h2>
+      <button onClick={()=>setSecondary('i dont know')}>Dont know</button> */}
+       
+    </div>
+  );
+}
+
+export default App;
