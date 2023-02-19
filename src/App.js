@@ -1,6 +1,15 @@
 import './App.css';
 import {  useState, useEffect } from 'react';
 
+function GithubUser({name, avatar}){
+  return(
+    <div>
+      <h1>{name}</h1>
+      <img src={avatar}></img>
+    </div>
+  )
+}
+
 function App () {
   const [data, setData] = useState(null);
   useEffect (()=>{
@@ -11,8 +20,11 @@ function App () {
   },[])
   if(data)
     return(
-      <pre>{JSON.stringify(data, null, 10)}</pre>
+      // <pre>{JSON.stringify(data, null, 10)}</pre>
       //data is the data and null, 10 is the formatting of the json to make it readable
+      <GithubUser name = {data.name} 
+        avatar = {data.avatar_url}      
+      />
     )
   return (
     <div className="App">
